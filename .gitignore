@@ -1,0 +1,12 @@
+# Large/local-only data -- not committed, see README for how to get these
+data/forcing/hrrr_data_20210825_20210905/
+data/ibtracs.ALL.list.v04r*.csv
+
+# Generated outputs (created automatically by the notebooks)
+data/final_run/
+
+# Jupyter / Python junk
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.DS_Store
