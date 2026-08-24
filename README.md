@@ -76,11 +76,18 @@ notebooks):
 
 | File | Used by | Notes |
 |---|---|---|
-| `ibtracs.ALL.list.v04r00.csv` | 1 | IBTrACS best-track data (all basins, v04r00) |
+| `ibtracs.ALL.list.v04r01.csv` | 1 | IBTrACS best-track data (all basins, v04r01) — download from [NCEI](https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.ALL.list.v04r01.csv) and place directly in `DATA_DIR` (i.e. `data/ibtracs.ALL.list.v04r01.csv`) |
 | `forcing/buoy_location.csv` | 2 | Buoy site metadata (name, lat/lon) for HRRR extraction |
 | `forcing/glider_location_close.csv`, `forcing/glider_location_082800.csv` | 2 | Glider location metadata per case |
 | `forcing/hrrr_data_20210825_20210905/*.nc` | 2 | Daily HRRR NetCDF files covering the storm period |
 | `final_run/data/`, `final_run/figures/` | 1, 2, 3, 4 | Created automatically — this is where each notebook's outputs (initial conditions, forcing, PWP runs, figures) get written and then read back by the next notebook |
+
+**A note on the HRRR files:** full daily HRRR grids are ~700+ MB each,
+far too large for GitHub. This repo ships only a small cropped example
+(landfall ± 1 day, spatially cropped to the two sites used here) —
+see `scripts/make_example_hrrr_subset.py` for how it was made, and for
+your own runs with the full storm period you'll want the complete set
+from your own HRRR archive.
 
 Notebook 4 also re-opens the notebook-1 initial-condition file
 (`ng645-<profileID>_original.nc`) alongside the PWP output, since the PWP
